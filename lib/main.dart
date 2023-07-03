@@ -88,15 +88,15 @@ class mainClass extends StatelessWidget {
               ],
             ),
           ),
-          body: TabBarView(
+          body: const TabBarView(
             children: [
               // Add your desired content for each tab
 
-              const communityClass(),
-              const chatsClass(),
+              communityClass(),
+              chatsClass(),
 
-              const statusClass(),
-              Container(color: Colors.yellow),
+              statusClass(),
+              callClass(),
             ],
           ),
           // backgroundColor: Color.fromARGB(8, 105, 83, 83),
@@ -983,7 +983,7 @@ class communityClass extends StatelessWidget {
           padding: EdgeInsets.all(8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               Text(
                 "Introducing communities",
                 style: TextStyle(
@@ -998,7 +998,7 @@ class communityClass extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 10.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               Text(
                 "Easily organise your related groups and send \nannouncements. Now, your communities, like \nneighbourhoods or schools, can have their own \nspace.",
                 textAlign: (TextAlign.center),
@@ -1011,7 +1011,7 @@ class communityClass extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               SizedBox(
                 width: 290,
                 child: ElevatedButton(
@@ -1029,6 +1029,40 @@ class communityClass extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+// ignore: camel_case_types
+class callClass extends StatelessWidget {
+  const callClass({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: Row(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(1),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.teal,
+                    radius: 30,
+                    child: ClipOval(
+                        child: Icon(
+                      Icons.insert_link_rounded,
+                    )),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
