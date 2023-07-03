@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 void main() {
   runApp(const MyApp());
@@ -1039,11 +1040,11 @@ class callClass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8),
             child: Row(
               children: <Widget>[
@@ -1053,9 +1054,117 @@ class callClass extends StatelessWidget {
                     backgroundColor: Colors.teal,
                     radius: 30,
                     child: ClipOval(
-                        child: Icon(
-                      Icons.insert_link_rounded,
-                    )),
+                      child: Icon(
+                        Icons.insert_link_rounded,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'Create call link',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 5, left: 2),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Share a link for your WhatsApp call",
+                                  style: TextStyle(color: Colors.black45)),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 20,
+                  top: 8,
+                ),
+                child: Text("Recent",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(2),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.teal,
+                    radius: 30,
+                    child: ClipOval(
+                      child: Image.asset(
+                        "images/ruhana.jpg",
+                        width: 60,
+                        height: 60,
+                      ),
+                    ),
+                  ),
+                ),
+                const Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Ruhana (3)",
+                              style: TextStyle(
+                                  // color: Colors.red,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Row(
+                            children: [
+                              Icon(Icons.arrow_outward,
+                                  size: 18, color: Colors.teal),
+                              Text(" Today, 12:36 am"),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(2),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.video_call,
+                        color: Colors.teal,
+                      ),
+                    ],
                   ),
                 ),
               ],
